@@ -1,0 +1,28 @@
+name: shake_widget
+description: "A Widget to add shake and vibrate functionality."
+version: 0.0.1
+homepage: https://github.com/juannmadelboca/shake_widget
+repository: https://github.com/juannmadelboca/shake_widget
+issue_tracker: https://github.com/juannmadelboca/shake_widget/issues
+
+environment:
+  sdk: ^3.8.1
+  flutter: '>=3.3.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  vibration: ^3.1.3
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  plugin:
+    platforms:
+      android:
+        package: com.kalantos.shake_widget
+        pluginClass: ShakeWidgetPlugin
+      ios:
+        pluginClass: ShakeWidgetPlugin
