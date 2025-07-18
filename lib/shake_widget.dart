@@ -1,4 +1,4 @@
-library shake_widget;
+library;
 
 import 'dart:math' as math;
 import 'package:flutter/material.dart';
@@ -16,12 +16,12 @@ class ShakeWidget extends StatefulWidget {
   final ShakeConfig? customConfig;
 
   const ShakeWidget({
-    Key? key,
+    super.key,
     required this.child,
     this.duration = const Duration(milliseconds: 700),
     this.preset = ShakePreset.heavy,
     this.customConfig,
-  }) : super(key: key);
+  });
 
   @override
   ShakeWidgetState createState() => ShakeWidgetState();
@@ -56,7 +56,7 @@ class ShakeWidgetState extends State<ShakeWidget> with SingleTickerProviderState
         break;
       case VibrationType.custom:
         try {
-          final supportsPattern = await Vibration.hasCustomVibrationsSupport() ?? false;
+          final supportsPattern = await Vibration.hasCustomVibrationsSupport();
           if (supportsPattern && config.pattern != null && config.intensities != null) {
             await Vibration.vibrate(
               pattern: config.pattern ?? [0, 40, 80, 40, 80, 40],
