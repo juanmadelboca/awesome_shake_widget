@@ -134,7 +134,10 @@ class _CustomTextFieldState extends State<CustomTextField> {
         hintText: widget.hintText,
         filled: true,
         fillColor: const Color(0xFFF3F1EC),
-        contentPadding: const EdgeInsets.symmetric(vertical: 18, horizontal: 16),
+        contentPadding: const EdgeInsets.symmetric(
+          vertical: 18,
+          horizontal: 16,
+        ),
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(16),
           borderSide: BorderSide.none,

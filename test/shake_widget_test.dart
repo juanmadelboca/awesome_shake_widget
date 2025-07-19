@@ -19,7 +19,9 @@ void main() {
     expect(find.byKey(testKey), findsOneWidget);
   });
 
-  testWidgets('ShakeWidget can be triggered via GlobalKey', (WidgetTester tester) async {
+  testWidgets('ShakeWidget can be triggered via GlobalKey', (
+    WidgetTester tester,
+  ) async {
     final shakeKey = GlobalKey<ShakeWidgetState>();
 
     await tester.pumpWidget(

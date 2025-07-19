@@ -1,9 +1,9 @@
 name: awesome_shake_widget
 description: "A Widget to add shake and vibrate functionality."
-version: 1.0.0
-homepage: https://github.com/juanmadelboca/shake_widget
-repository: https://github.com/juanmadelboca/shake_widget
-issue_tracker: https://github.com/juanmadelboca/shake_widget/issues
+version: 1.0.1
+homepage: https://github.com/juanmadelboca/awesome_shake_widget
+repository: https://github.com/juanmadelboca/awesome_shake_widget
+issue_tracker: https://github.com/juanmadelboca/awesome_shake_widget/issues
 
 environment:
   sdk: ^3.8.1
