@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:shake_widget/enum/shake_preset.dart';
-import 'package:shake_widget/enum/vibration_type.dart';
-import 'package:shake_widget/shake_config.dart';
-import 'package:shake_widget/shake_widget.dart';
+import 'package:awesome_shake_widget/enum/shake_preset.dart';
+import 'package:awesome_shake_widget/enum/vibration_type.dart';
+import 'package:awesome_shake_widget/shake_config.dart';
+import 'package:awesome_shake_widget/shake_widget.dart';
 
 void main() {
   runApp(const ShakeExampleApp());

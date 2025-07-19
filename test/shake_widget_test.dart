@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:shake_widget/enum/shake_preset.dart';
-import 'package:shake_widget/shake_widget.dart';
+import 'package:awesome_shake_widget/enum/shake_preset.dart';
+import 'package:awesome_shake_widget/shake_widget.dart';
 
 void main() {
   testWidgets('ShakeWidget renders its child', (WidgetTester tester) async {
