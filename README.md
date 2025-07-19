@@ -36,6 +36,8 @@ flutter pub get
 
 ### 1️⃣ Standard (Shake + Vibration)
 
+By using the built-in presets — `light`, `medium`, `heavy` and `custom` — you can quickly apply different vibration intensities and patterns, perfectly paired with UI shake animations for a dynamic and responsive user experience.
+
 ```dart
 final shakeKey = GlobalKey<ShakeWidgetState>();
 
@@ -53,10 +55,11 @@ shakeKey.currentState?.shake();
 
 ### 2️⃣ Shake Only (No Vibration)
 
+If you only want the visual shake effect without vibration, you can set `vibrationType` to `VibrationType.none` using the `ShakeConfig`. To customize the intensity of the shake, adjust the `offset` value — higher values will produce a stronger visual effect.
+
 ```dart
 ShakeWidget(
   key: shakeKey,
-  preset: ShakePreset.custom,
   customConfig: ShakeConfig(
     offset: 20,
     vibrationType: VibrationType.none,
@@ -67,19 +70,20 @@ ShakeWidget(
 
 ---
 
-### 3️⃣ Full Custom (Offset + Pattern + Intensities)
+### 3️⃣ Advanced Configuration: Full Control Over Visual and Vibration Effects
+
+You can also create custom vibration patterns by setting `vibrationType` to `VibrationType.custom`, and providing your own `pattern` and `intensities`. This gives you full control over the vibration behavior.
 
 ```dart
 ShakeWidget(
-  key: shakeKey,
-  preset: ShakePreset.custom,
-  customConfig: ShakeConfig(
-    offset: 32,
-    pattern: [0, 50, 100, 50],
-    intensities: [255, 0, 255, 0],
-    vibrationType: VibrationType.custom,
-  ),
-  child: Text("Custom Shake!"),
+key: shakeKey,
+customConfig: ShakeConfig(
+offset: 32,
+pattern: [0, 50, 100, 50],
+intensities: [255, 0, 255, 0],
+vibrationType: VibrationType.custom,
+),
+child: Text("Custom Shake!"),
 );
 ```
 
