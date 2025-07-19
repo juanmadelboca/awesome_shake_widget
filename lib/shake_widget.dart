@@ -27,7 +27,8 @@ class ShakeWidget extends StatefulWidget {
   ShakeWidgetState createState() => ShakeWidgetState();
 }
 
-class ShakeWidgetState extends State<ShakeWidget> with SingleTickerProviderStateMixin {
+class ShakeWidgetState extends State<ShakeWidget>
+    with SingleTickerProviderStateMixin {
   late AnimationController _controller;
   late Animation<double> _animation;
   late ShakeConfig config;
@@ -41,8 +42,12 @@ class ShakeWidgetState extends State<ShakeWidget> with SingleTickerProviderState
 
     _controller = AnimationController(duration: widget.duration, vsync: this);
 
-    final curved = CurvedAnimation(parent: _controller, curve: Curves.elasticInOut);
-    _animation = Tween(begin: 0.0, end: config.offset).animate(curved)..addListener(() => setState(() {}));
+    final curved = CurvedAnimation(
+      parent: _controller,
+      curve: Curves.elasticInOut,
+    );
+    _animation = Tween(begin: 0.0, end: config.offset).animate(curved)
+      ..addListener(() => setState(() {}));
   }
 
   Future<void> shake() async {
@@ -57,7 +62,9 @@ class ShakeWidgetState extends State<ShakeWidget> with SingleTickerProviderState
       case VibrationType.custom:
         try {
           final supportsPattern = await Vibration.hasCustomVibrationsSupport();
-          if (supportsPattern && config.pattern != null && config.intensities != null) {
+          if (supportsPattern &&
+              config.pattern != null &&
+              config.intensities != null) {
             await Vibration.vibrate(
               pattern: config.pattern ?? [0, 40, 80, 40, 80, 40],
               intensities: config.intensities ?? [180, 0, 180, 0, 180, 0],
@@ -74,7 +81,13 @@ class ShakeWidgetState extends State<ShakeWidget> with SingleTickerProviderState
 
   @override
   Widget build(BuildContext context) {
-    return Transform.translate(offset: Offset(_animation.value * math.sin(_controller.value * math.pi * 4), 0), child: widget.child);
+    return Transform.translate(
+      offset: Offset(
+        _animation.value * math.sin(_controller.value * math.pi * 4),
+        0,
+      ),
+      child: widget.child,
+    );
   }
 
   @override

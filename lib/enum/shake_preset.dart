@@ -1,6 +1,1 @@
-enum ShakePreset {
-  light,
-  medium,
-  heavy,
-  custom,
-}
+enum ShakePreset { light, medium, heavy, custom }
