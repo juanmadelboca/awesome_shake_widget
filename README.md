@@ -1,10 +1,10 @@
-# 🚀 shake_widget
+# 🚀 awesome_shake_widget
 
 A customizable Flutter widget that adds shake animations with haptic and vibration feedback. Perfect for invalid forms, error indicators, or drawing attention to UI components.
 
-![Pub Version](https://img.shields.io/pub/v/shake_widget.svg)
+![Pub Version](https://img.shields.io/pub/v/awesome_shake_widget.svg)
 ![Platform](https://img.shields.io/badge/platform-flutter-blue)
-![License](https://img.shields.io/github/license/yourusername/shake_widget)
+![License](https://img.shields.io/github/license/juanmadelboca/awesome_shake_widget)
 
 ---
 
@@ -22,7 +22,7 @@ A customizable Flutter widget that adds shake animations with haptic and vibrati
 
 ```yaml
 dependencies:
-  shake_widget: ^0.0.1
+  awesome_shake_widget: ^1.0.1
 ```
 
 Run:
@@ -138,7 +138,7 @@ Example `main.dart`:
 
 ```dart
 import 'package:flutter/material.dart';
-import 'package:shake_widget/shake_widget.dart';
+import 'package:awesome_shake_widget/shake_widget.dart';
 
 void main() => runApp(const MyApp());
 
