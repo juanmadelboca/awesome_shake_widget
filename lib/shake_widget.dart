@@ -3,7 +3,7 @@ library;
 import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:shake_widget/shake_config.dart';
+import 'package:awesome_shake_widget/shake_config.dart';
 import 'package:vibration/vibration.dart';
 
 import 'enum/shake_preset.dart';
