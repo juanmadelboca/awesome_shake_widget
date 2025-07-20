@@ -1,6 +1,6 @@
 name: awesome_shake_widget
 description: "A Flutter widget that provides shake animation and optional vibration effects, great for invalid forms, attention prompts, and user interaction feedback."
-version: 1.0.2
+version: 1.0.3
 homepage: https://github.com/juanmadelboca/awesome_shake_widget
 repository: https://github.com/juanmadelboca/awesome_shake_widget
 issue_tracker: https://github.com/juanmadelboca/awesome_shake_widget/issues

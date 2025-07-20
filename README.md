@@ -97,7 +97,7 @@ shakeKey.currentState?.shake();
 
 ## 🎥 Demo
 
-<img src="https://raw.githubusercontent.com/juanmadelboca/awesome_shake_widget/main/example/demo.gif" height="50%" />
+<img src="https://raw.githubusercontent.com/juanmadelboca/awesome_shake_widget/main/example/demo.gif" width="40%" />
 
 This demo shows how you can apply shake animations to:
 

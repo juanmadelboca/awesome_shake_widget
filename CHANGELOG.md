@@ -6,3 +6,5 @@
 - Improve plugin score
 ## 1.0.2
 - Improve usage in README.md
+## 1.0.3
+- Correct gif size on README.md
