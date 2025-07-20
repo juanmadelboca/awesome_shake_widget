@@ -15,7 +15,14 @@ class CustomDivider extends StatelessWidget {
           mainAxisSize: MainAxisSize.max,
           children: [
             Expanded(child: Divider(thickness: 1)),
-            if (text != null) Padding(padding: const EdgeInsets.symmetric(horizontal: 8.0), child: Text(text!, style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),)),
+            if (text != null)
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                child: Text(
+                  text!,
+                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
+                ),
+              ),
             Expanded(child: Divider(thickness: 1)),
           ],
         ),

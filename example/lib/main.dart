@@ -49,7 +49,7 @@ class ShakeExamplePage extends StatelessWidget {
                   icon: Icons.vibration,
                 ),
               ),
-              CustomDivider(text: "Medium Shake",),
+              CustomDivider(text: "Medium Shake"),
               Text("This form will shake if any value is empty"),
               const SizedBox(height: 15),
               ShakeWidget(
@@ -62,7 +62,7 @@ class ShakeExamplePage extends StatelessWidget {
                   ),
                 ),
               ),
-              CustomDivider(text: "Heavy Shake",),
+              CustomDivider(text: "Heavy Shake"),
               Text("Image will shake on load finished"),
               const SizedBox(height: 15),
               ShakeWidget(
@@ -72,7 +72,7 @@ class ShakeExamplePage extends StatelessWidget {
                   onLoaded: () => heavyKey.currentState?.shake(),
                 ),
               ),
-              CustomDivider(text: "Custom Shake",),
+              CustomDivider(text: "Custom Shake"),
               CustomButton(
                 onPressed: () => showCustomDialog(context: context),
                 text: 'Trigger Heavy Shake',
