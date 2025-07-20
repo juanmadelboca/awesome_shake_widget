@@ -95,8 +95,6 @@ shakeKey.currentState?.shake();
 
 ---
 
----
-
 ## 🎥 Demo
 
 <img src="https://raw.githubusercontent.com/juanmadelboca/awesome_shake_widget/main/example/demo.gif" width="100%" />
@@ -108,6 +106,8 @@ This demo shows how you can apply shake animations to:
 - 🖼️ Images
 - ✏️ Text fields
 - 📦 Any widget
+
+---
 
 ## 🧩 API Reference
 
