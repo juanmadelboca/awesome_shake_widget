@@ -3,6 +3,7 @@ import 'package:awesome_shake_widget/shake_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:shake_widget_example/widgets/custom_button.dart';
 import 'package:shake_widget_example/widgets/custom_dialog.dart';
+import 'package:shake_widget_example/widgets/custom_divider.dart';
 import 'package:shake_widget_example/widgets/custom_form.dart';
 import 'package:shake_widget_example/widgets/custome_network_image.dart';
 
@@ -48,9 +49,7 @@ class ShakeExamplePage extends StatelessWidget {
                   icon: Icons.vibration,
                 ),
               ),
-              const SizedBox(height: 15),
-              Divider(),
-              const SizedBox(height: 15),
+              CustomDivider(text: "Medium Shake",),
               Text("This form will shake if any value is empty"),
               const SizedBox(height: 15),
               ShakeWidget(
@@ -63,9 +62,7 @@ class ShakeExamplePage extends StatelessWidget {
                   ),
                 ),
               ),
-              const SizedBox(height: 15),
-              Divider(),
-              const SizedBox(height: 15),
+              CustomDivider(text: "Heavy Shake",),
               Text("Image will shake on load finished"),
               const SizedBox(height: 15),
               ShakeWidget(
@@ -75,9 +72,7 @@ class ShakeExamplePage extends StatelessWidget {
                   onLoaded: () => heavyKey.currentState?.shake(),
                 ),
               ),
-              const SizedBox(height: 15),
-              Divider(),
-              const SizedBox(height: 15),
+              CustomDivider(text: "Custom Shake",),
               CustomButton(
                 onPressed: () => showCustomDialog(context: context),
                 text: 'Trigger Heavy Shake',
