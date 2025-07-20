@@ -1,8 +1,11 @@
-import 'package:flutter/material.dart';
 import 'package:awesome_shake_widget/enum/shake_preset.dart';
-import 'package:awesome_shake_widget/enum/vibration_type.dart';
-import 'package:awesome_shake_widget/shake_config.dart';
 import 'package:awesome_shake_widget/shake_widget.dart';
+import 'package:flutter/material.dart';
+import 'package:shake_widget_example/widgets/custom_button.dart';
+import 'package:shake_widget_example/widgets/custom_dialog.dart';
+import 'package:shake_widget_example/widgets/custom_divider.dart';
+import 'package:shake_widget_example/widgets/custom_form.dart';
+import 'package:shake_widget_example/widgets/custome_network_image.dart';
 
 void main() {
   runApp(const ShakeExampleApp());
@@ -26,11 +29,6 @@ class ShakeExamplePage extends StatelessWidget {
   final GlobalKey<ShakeWidgetState> heavyKey = GlobalKey();
   final GlobalKey<ShakeWidgetState> customKey = GlobalKey();
 
-  final TextEditingController lightController = TextEditingController();
-  final TextEditingController mediumController = TextEditingController();
-  final TextEditingController heavyController = TextEditingController();
-  final TextEditingController customController = TextEditingController();
-
   ShakeExamplePage({super.key});
 
   @override
@@ -45,102 +43,42 @@ class ShakeExamplePage extends StatelessWidget {
               ShakeWidget(
                 key: lightKey,
                 preset: ShakePreset.light,
-                child: CustomTextField(
-                  controller: lightController,
-                  hintText: 'Light Shake',
+                child: CustomButton(
+                  onPressed: () => lightKey.currentState?.shake(),
+                  text: "Light Shake",
+                  icon: Icons.vibration,
                 ),
               ),
-              const SizedBox(height: 20),
-              ElevatedButton(
-                onPressed: () => lightKey.currentState?.shake(),
-                child: const Text('Trigger Light Shake'),
-              ),
-              const SizedBox(height: 30),
+              CustomDivider(text: "Medium Shake"),
+              Text("This form will shake if any value is empty"),
+              const SizedBox(height: 15),
               ShakeWidget(
                 key: mediumKey,
                 preset: ShakePreset.medium,
-                child: CustomTextField(
-                  controller: mediumController,
-                  hintText: 'Medium Shake',
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 40.0),
+                  child: CustomForm(
+                    onEmpty: (first, second) => mediumKey.currentState?.shake(),
+                  ),
                 ),
               ),
-              const SizedBox(height: 20),
-              ElevatedButton(
-                onPressed: () => mediumKey.currentState?.shake(),
-                child: const Text('Trigger Medium Shake'),
-              ),
-              const SizedBox(height: 30),
+              CustomDivider(text: "Heavy Shake"),
+              Text("Image will shake on load finished"),
+              const SizedBox(height: 15),
               ShakeWidget(
                 key: heavyKey,
                 preset: ShakePreset.heavy,
-                child: CustomTextField(
-                  controller: heavyController,
-                  hintText: 'Heavy Shake',
+                child: CustomNetworkImage(
+                  onLoaded: () => heavyKey.currentState?.shake(),
                 ),
               ),
-              const SizedBox(height: 20),
-              ElevatedButton(
-                onPressed: () => heavyKey.currentState?.shake(),
-                child: const Text('Trigger Heavy Shake'),
-              ),
-              const SizedBox(height: 30),
-              ShakeWidget(
-                key: customKey,
-                preset: ShakePreset.custom,
-                customConfig: const ShakeConfig(
-                  offset: 36,
-                  pattern: [0, 40, 80, 40, 120, 40],
-                  intensities: [255, 0, 180, 0, 180, 0],
-                  vibrationType: VibrationType.custom,
-                ),
-                child: CustomTextField(
-                  controller: customController,
-                  hintText: 'Custom Shake',
-                ),
-              ),
-              const SizedBox(height: 20),
-              ElevatedButton(
-                onPressed: () => customKey.currentState?.shake(),
-                child: const Text('Trigger Custom Shake'),
+              CustomDivider(text: "Custom Shake"),
+              CustomButton(
+                onPressed: () => showCustomDialog(context: context),
+                text: 'Trigger Heavy Shake',
               ),
             ],
           ),
-        ),
-      ),
-    );
-  }
-}
-
-class CustomTextField extends StatefulWidget {
-  final TextEditingController controller;
-  final String hintText;
-
-  const CustomTextField({
-    super.key,
-    required this.controller,
-    required this.hintText,
-  });
-
-  @override
-  State<CustomTextField> createState() => _CustomTextFieldState();
-}
-
-class _CustomTextFieldState extends State<CustomTextField> {
-  @override
-  Widget build(BuildContext context) {
-    return TextField(
-      controller: widget.controller,
-      decoration: InputDecoration(
-        hintText: widget.hintText,
-        filled: true,
-        fillColor: const Color(0xFFF3F1EC),
-        contentPadding: const EdgeInsets.symmetric(
-          vertical: 18,
-          horizontal: 16,
-        ),
-        border: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(16),
-          borderSide: BorderSide.none,
         ),
       ),
     );
