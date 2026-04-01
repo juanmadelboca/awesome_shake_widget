@@ -10,3 +10,5 @@
 - Correct gif size on README.md
 ## 1.1.0
 - Add support to iOS
+## 1.1.1
+- Updated dependencies and Android toolchain
